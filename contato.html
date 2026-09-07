@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contato — Vert Genèse</title>
+<link rel="icon" type="image/png" href="imagens/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<main>
+<div class="pagehead"><div class="wrap"><h1>Tem uma corrente residual sem destino de valor?</h1><p>Descreva o resíduo, o volume mensal e o destino atual. Respondemos com uma avaliação inicial das rotas possíveis.</p></div></div>
+<section><div class="wrap"><div class="cinfo" id="bloco" style="font-size:19px"></div></div></section>
+</main>
+<script src="dados.js"></script>
+<script>
+function montaPagina(){
+  var l = ['<div><a href="mailto:'+esc(CONTATO.email)+'">'+esc(CONTATO.email)+'</a></div>'];
+  if (CONTATO.whatsapp) l.push('<div><a href="https://wa.me/'+esc(CONTATO.whatsapp)+'" target="_blank" rel="noopener">WhatsApp</a></div>');
+  if (CONTATO.linkedin) l.push('<div><a href="'+esc(CONTATO.linkedin)+'" target="_blank" rel="noopener">LinkedIn</a></div>');
+  if (CONTATO.instagram) l.push('<div><a href="'+esc(CONTATO.instagram)+'" target="_blank" rel="noopener">Instagram</a></div>');
+  l.push('<div>'+esc(CONTATO.cidade)+'</div>');
+  document.getElementById("bloco").innerHTML = l.join("");
+}
+</script>
+<script src="site.js"></script>
+</body>
+</html>

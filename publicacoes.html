@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publicações — Vert Genèse</title>
+<link rel="icon" type="image/png" href="imagens/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<main>
+<div class="pagehead"><div class="wrap"><h1>Publicações científicas</h1><p>A tecnologia que oferecemos é publicada e revisada por pares.</p></div></div>
+<section><div class="wrap"><ul class="rows" id="lista"></ul></div></section>
+</main>
+<script src="dados.js"></script>
+<script>
+function montaPagina(){
+  document.getElementById("lista").innerHTML = PUBLICACOES.map(function(a){
+    var t = a.link ? '<a class="t" href="'+esc(a.link)+'" target="_blank" rel="noopener">'+esc(a.titulo)+'</a>'
+                   : '<span class="t">'+esc(a.titulo)+'</span>';
+    return '<li><span class="tag">'+esc(a.ano)+'</span>'+t+'<span class="m">'+esc(a.veiculo)+'</span></li>';
+  }).join("");
+}
+</script>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patentes — Vert Genèse</title>
+<link rel="icon" type="image/png" href="imagens/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<main>
+<div class="pagehead"><div class="wrap"><h1>Patentes</h1><p>Propriedade intelectual depositada, disponível para licenciamento ou desenvolvimento conjunto.</p></div></div>
+<section><div class="wrap"><ul class="rows" id="lista"></ul></div></section>
+</main>
+<script src="dados.js"></script>
+<script>
+function montaPagina(){
+  document.getElementById("lista").innerHTML = PATENTES.map(function(p){
+    return '<li><span class="tag">'+esc(p.ano)+'</span><span class="t">'+esc(p.titulo)+'</span>'+
+      '<span class="m">'+esc(p.numero)+(p.nota ? ' &middot; '+esc(p.nota) : '')+'</span></li>';
+  }).join("");
+}
+</script>
+<script src="site.js"></script>
+</body>
+</html>

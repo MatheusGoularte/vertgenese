@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfólio — Vert Genèse</title>
+<link rel="icon" type="image/png" href="imagens/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<main>
+<div class="pagehead"><div class="wrap"><h1>Portfólio técnico</h1><p>Materiais e rotas de processo já desenvolvidos, com o estágio de maturidade de cada um. Fichas técnicas e amostras sob solicitação.</p></div></div>
+<section>
+  <div class="wrap">
+    <div class="filtros" id="filtros"></div>
+    <div class="prods" id="lista-produtos"></div>
+  </div>
+</section>
+</main>
+<script src="dados.js"></script>
+<script>
+function montaPagina(){
+  var elProd = document.getElementById("lista-produtos");
+  var elFil  = document.getElementById("filtros");
+  var param  = new URLSearchParams(location.search).get("cat");
+  var atual  = (param && CATEGORIAS.indexOf(param) >= 0) ? param : "Todos";
+
+  function desenha(){
+    elProd.innerHTML = PRODUTOS
+      .filter(function(x){ return atual === "Todos" || x.categoria === atual; })
+      .map(cardProduto).join("");
+  }
+  ["Todos"].concat(CATEGORIAS).forEach(function(cat){
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = cat;
+    b.setAttribute("aria-pressed", cat === atual ? "true" : "false");
+    b.addEventListener("click", function(){
+      atual = cat;
+      Array.prototype.forEach.call(elFil.children, function(o){
+        o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+      desenha();
+    });
+    elFil.appendChild(b);
+  });
+  desenha();
+}
+</script>
+<script src="site.js"></script>
+</body>
+</html>

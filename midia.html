@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mídia — Vert Genèse</title>
+<link rel="icon" type="image/png" href="imagens/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<main>
+<div class="pagehead"><div class="wrap"><h1>Na mídia</h1><p>Cobertura da imprensa e de agências de fomento.</p></div></div>
+<section><div class="wrap"><div class="cards" id="lista"></div></div></section>
+</main>
+<script src="dados.js"></script>
+<script>
+function montaPagina(){
+  document.getElementById("lista").innerHTML = MIDIA.map(function(m){
+    var thumb = m.img ? '<div class="thumb"><img src="'+esc(m.img)+'" alt=""></div>'
+                      : '<div class="thumb">'+esc(m.veiculo)+'</div>';
+    var corpo = '<div class="body"><strong>'+esc(m.titulo)+'</strong><span>'+esc(m.veiculo)+'</span></div>';
+    return m.link
+      ? '<a class="mcard" href="'+esc(m.link)+'" target="_blank" rel="noopener">'+thumb+corpo+'</a>'
+      : '<div class="mcard">'+thumb+corpo+'</div>';
+  }).join("");
+}
+</script>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Produto — Vert Genèse</title>
+<link rel="icon" type="image/png" href="imagens/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<main>
+<section><div class="wrap" id="conteudo"></div></section>
+</main>
+<script src="dados.js"></script>
+<script>
+function montaPagina(){
+  var alvo = new URLSearchParams(location.search).get("p");
+  var x = PRODUTOS.filter(function(p){ return slug(p.nome) === alvo; })[0];
+  var el = document.getElementById("conteudo");
+  if (!x){
+    el.innerHTML = '<h2>Produto não encontrado</h2><p class="sub">O material que você procura pode ter mudado de nome.</p>'+
+      '<a class="maislink" href="portfolio.html">Voltar ao portfólio</a>';
+    return;
+  }
+  document.title = x.nome + " — Vert Genèse";
+  var foto = x.img ? '<div class="dfoto"><img src="'+esc(x.img)+'" alt="'+esc(x.nome)+'"></div>'
+                   : '<div class="dfoto">'+ICONE_FIBRA+'</div>';
+  var corpo = String(x.detalhe || x.desc || "").split("\n\n")
+    .map(function(par){ return '<p>'+esc(par)+'</p>'; }).join("");
+  var aplic = (x.aplicacoes && x.aplicacoes.length)
+    ? '<h2>Aplicações</h2><ul class="aplic">'+x.aplicacoes.map(function(u){ return '<li>'+esc(u)+'</li>'; }).join("")+'</ul>' : "";
+  el.innerHTML =
+    '<a class="voltar" href="portfolio.html">&larr; Voltar ao portfólio</a>'+
+    '<div class="dcabec">'+foto+
+      '<div><h1>'+esc(x.nome)+'</h1>'+
+        '<div class="dmeta"><span>'+esc(x.categoria)+'</span>'+
+        (x.estagio ? '<span class="estag">'+esc(x.estagio)+'</span>' : '')+'</div>'+
+        '<div class="corpo">'+corpo+'</div>'+aplic+
+        '<div class="dcta"><a class="btn" href="contato.html">Solicitar ficha técnica ou amostra</a></div>'+
+      '</div></div>';
+}
+</script>
+<script src="site.js"></script>
+</body>
+</html>
