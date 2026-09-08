@@ -20,6 +20,25 @@ function slug(t){ return String(t).normalize("NFD").replace(/[\u0300-\u036f]/g,"
 
 var ICONE_FIBRA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M3 9 q6 3 11 -1 q4 -3 7 2"/><path d="M3 13 q7 -2 12 2 q4 3 6 -2"/><path d="M4 17 q6 -1 11 2"/></svg>';
 
+function ajustaFavicon(){
+  /* remove os ícones que o navegador já tenha resolvido e recoloca com versão nova.
+     Se trocar o arquivo do ícone algum dia, aumente o número em VERSAO_ICONE. */
+  var VERSAO_ICONE = "3";
+  Array.prototype.forEach.call(
+    document.querySelectorAll("link[rel*='icon']"), function(l){ l.parentNode.removeChild(l); });
+
+  [["icon","image/x-icon","favicon.ico"],
+   ["shortcut icon","image/x-icon","favicon.ico"],
+   ["icon","image/png","imagens/favicon.png"],
+   ["apple-touch-icon","","apple-touch-icon.png"]].forEach(function(cfg){
+    var l = document.createElement("link");
+    l.rel = cfg[0];
+    if (cfg[1]) l.type = cfg[1];
+    l.href = cfg[2] + "?v=" + VERSAO_ICONE;
+    document.head.appendChild(l);
+  });
+}
+
 function montaCabecalho(){
   var atual = (location.pathname.split("/").pop() || "index.html");
   var itens = MENU.map(function(m){
@@ -79,6 +98,7 @@ function cardProduto(x){
 }
 
 document.addEventListener("DOMContentLoaded", function(){
+  ajustaFavicon();
   montaCabecalho();
   if (typeof montaPagina === "function") montaPagina();
   montaRodape();
