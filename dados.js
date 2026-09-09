@@ -90,7 +90,7 @@ const MIDIA = [
 ];
 
 const EQUIPE = [
-  { nome:"Matheus Goularte", cargo:"Sócio-fundador — Pesquisa e Desenvolvimento",
+  { nome:"Matheus Goularte", cargo:"Sócio-fundador - Presidente/P&DI",
     resumo:"Doutorando em Ciência e Engenharia de Materiais. Atua com materiais lignocelulósicos, processos de polpação e celulose microfibrilada.",
     linkedin:"" },
 
@@ -101,11 +101,11 @@ const EQUIPE = [
 
 const CONTATO = {
   email:"contato@vertgenese.com.br",
-  whatsapp:"5553000000000",          // só números, com 55 na frente
+  whatsapp:"5553981032289",          // só números, com 55 na frente
   cidade:"Pelotas, Rio Grande do Sul",
-  cnpj:"00.000.000/0001-00",
-  linkedin:"",
-  instagram:"",
+  cnpj:"53.927.908/0001-01",
+  linkedin:" ",
+  instagram:" ",
 };
 
 /* ═══════════ FIM DO CONTEÚDO EDITÁVEL ═══════════ */
