@@ -213,3 +213,21 @@ main section:last-of-type{border-bottom:none}
 /* links de contato sobre fundo claro */
 main .cinfo a{color:var(--teal)}
 main .cinfo a:hover{text-decoration:underline}
+
+
+/* cards da equipe com foto */
+.people{display:grid;gap:22px}
+@media (min-width:640px){.people{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}}
+.person{
+  border-left:0;padding:0;background:var(--card);
+  border:1px solid var(--rule);border-radius:6px;overflow:hidden;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;
+}
+.person .retrato{aspect-ratio:4/5;background:var(--bg-alt);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.person .retrato img{width:100%;height:100%;object-fit:cover;display:block}
+.person .retrato span{font-family:"Archivo",sans-serif;font-size:40px;color:var(--teal);opacity:.35}
+.person .dados{padding:18px;display:flex;flex-direction:column;gap:6px}
+.person h3{font-size:18px;font-weight:600;margin:0}
+.person .role{color:var(--teal);font-size:14.5px;margin:0}
+.person p{color:var(--ink-soft);font-size:15px;margin:0}
+.equipe-intro{max-width:64ch;margin:0 0 38px;color:var(--ink-soft)}

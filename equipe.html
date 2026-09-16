@@ -12,16 +12,22 @@
 </head>
 <body>
 <main>
-<div class="pagehead"><div class="wrap"><h1>Equipe</h1><p>Quem executa os projetos.</p></div></div>
+<div class="pagehead"><div class="wrap"><h1>Equipe</h1><p>Equipe multidisciplinar com atuação em materiais, biomassa, biorrefinaria, química aplicada, madeira, tintas, vernizes, embalagens e desenvolvimento de produtos.</p></div></div>
 <section><div class="wrap"><div class="people" id="lista-equipe"></div></div></section>
 </main>
 <script src="dados.js"></script>
 <script>
 function montaPagina(){
   document.getElementById("lista-equipe").innerHTML = EQUIPE.map(function(p){
-    return '<div class="person"><h3>'+esc(p.nome)+'</h3><div class="role">'+esc(p.cargo)+'</div>'+
+    var iniciais = esc(p.nome).split(" ").map(function(x){ return x[0]; }).slice(0,2).join("");
+    var retrato = p.foto
+      ? '<div class="retrato"><img src="'+esc(p.foto)+'" alt="'+esc(p.nome)+'"></div>'
+      : '<div class="retrato"><span>'+iniciais+'</span></div>';
+    return '<div class="person">'+retrato+'<div class="dados">'+
+      '<h3>'+esc(p.nome)+'</h3><p class="role">'+esc(p.cargo)+'</p>'+
       '<p>'+esc(p.resumo)+'</p>'+
-      (p.linkedin ? '<p><a href="'+esc(p.linkedin)+'" target="_blank" rel="noopener">LinkedIn</a></p>' : '')+'</div>';
+      (p.linkedin ? '<p><a href="'+esc(p.linkedin)+'" target="_blank" rel="noopener">LinkedIn</a></p>' : '')+
+      '</div></div>';
   }).join("");
 }
 </script>

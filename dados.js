@@ -7,21 +7,27 @@
    ═══════════════════════════════════════════════════════════════════ */
 
 const PUBLICACOES = [
-  { titulo:"Slow pyrolysis of rice husk: characterization of biochar and pyroligneous liquid",
-    veiculo:"Molecules (MDPI)", ano:"2025",
-    link:"" },
+  { titulo:"Alkaline residues from the Kraft process in agricultural chains: an integrative narrative review with conceptual flow and industrial implementation considerations",
+    veiculo:"Chemical Engineering Journal: Green and Sustainable", ano:"2026",
+    link:"https://www.sciencedirect.com/science/article/pii/S3051003126001072" },
 
-  { titulo:"EDITAR — título do artigo",
-    veiculo:"EDITAR — periódico", ano:"2026",
-    link:"" },
+  { titulo:"Pyrolysis of rice husk for the production of bioactive compounds with potential in green chemistry and sustainable agriculture",
+    veiculo:"Molecules, v. 30, p. 2754", ano:"2025",
+    link:"https://www.mdpi.com/1420-3049/30/13/2754" },
 ];
 
 const PATENTES = [
-  { titulo:"EDITAR — título do pedido de patente", numero:"BR 10 2024 000000-0", ano:"2024",
-    nota:"Cotitularidade Vert Genese e universidade" },
+  { titulo:"Processo universal integrado de biorrefinaria de biomassas lignocelulósicas para obtenção sequencial de hemiceluloses/gomas, sílica, lignina e celulose em sistema de ciclo fechado e baixo efluente",
+    numero:"BR 10 2026 018935-9", ano:"2026",
+    nota:"Depósito em 29/07/2026" },
 
-  { titulo:"EDITAR — título do pedido de patente", numero:"BR 10 2025 000000-0", ano:"2025",
-    nota:"Cotitularidade Vert Genese e universidade" },
+  { titulo:"Obtenção de grafeno e óxido de grafeno a partir de alcatrão",
+    numero:"BR 10 2025 003813-7", ano:"2025",
+    nota:"Depósito em 26/02/2025" },
+
+  { titulo:"Enraizador e fortificante sustentável de líquido pirolenhoso para estímulo radicular eficiente e fortificação de planta",
+    numero:"BR 10 2024 023791", ano:"2024",
+    nota:"Depósito em 14/11/2024" },
 ];
 
 const PRODUTOS = [
@@ -86,26 +92,40 @@ const PRODUTOS = [
 const CATEGORIAS = ["Celulose microfibrilada","Revestimentos","Frações da biomassa"];
 
 const MIDIA = [
-  { titulo:"EDITAR — título da matéria", veiculo:"EDITAR — veículo", link:"", img:"" },
+  // Ainda sem matérias. Enquanto esta lista estiver vazia, remova a linha
+  // { rot:"Mídia", url:"midia.html" }, da lista MENU em site.js.
 ];
 
 const EQUIPE = [
-  { nome:"Matheus Goularte", cargo:"Sócio-fundador - Presidente/P&DI",
-    resumo:"Doutorando em Ciência e Engenharia de Materiais. Atua com materiais lignocelulósicos, processos de polpação e celulose microfibrilada.",
-    linkedin:"" },
+  // foto: opcional — ex.: "imagens/equipe/matheus.jpg". Vazio = card só com texto.
+  { nome:"Matheus Goularte", cargo:"Presidência",
+    resumo:"Mestre em Ciência e Engenharia de Materiais pela UFPel e doutorando na mesma área. Atua em materiais lignocelulósicos, pirólise e processos de biorrefinaria.",
+    foto:"imagens/equipe/matheus.jpg", linkedin:"" },
 
-  { nome:"EDITAR — nome da sócia", cargo:"EDITAR — cargo",
-    resumo:"EDITAR — uma ou duas linhas de formação e atuação.",
-    linkedin:"" },
+  { nome:"Ávila Ferreira", cargo:"Vice-presidência",
+    resumo:"Responsável por comunicação estratégica e presença institucional da empresa.",
+    foto:"imagens/equipe/avila.jpg", linkedin:"" },
+
+  { nome:"Wesley Pires", cargo:"Líder de Produção",
+    resumo:"Conduz a produção dos materiais em bancada e o escalonamento dos processos.",
+    foto:"imagens/equipe/wesley.jpg", linkedin:"" },
+
+  { nome:"Júlia Prates", cargo:"Líder de Sustentabilidade e Meio Ambiente",
+    resumo:"Responsável pelas frentes ambientais e pela avaliação de impacto das rotas desenvolvidas.",
+    foto:"imagens/equipe/julia.jpg", linkedin:"" },
+
+  { nome:"Antônio Motta", cargo:"Líder de Operação",
+    resumo:"Responsável pela operação e pela rotina técnica dos projetos em andamento.",
+    foto:"imagens/equipe/antonio.jpg", linkedin:"" },
 ];
 
 const CONTATO = {
   email:"contato@vertgenese.com.br",
-  whatsapp:"5553981032289",          // só números, com 55 na frente
+  whatsapp:"5553000000000",          // só números, com 55 na frente
   cidade:"Pelotas, Rio Grande do Sul",
-  cnpj:"53.927.908/0001-01",
-  linkedin:" ",
-  instagram:" ",
+  cnpj:"00.000.000/0001-00",
+  linkedin:"",
+  instagram:"",
 };
 
 /* ═══════════ FIM DO CONTEÚDO EDITÁVEL ═══════════ */
