@@ -116,7 +116,7 @@ const EQUIPE = [
 
   { nome:"Antônio Motta", cargo:"Líder de Operação",
     resumo:"Responsável pela operação e pela rotina técnica dos projetos em andamento.",
-    foto:"", linkedin:"" },
+    foto:"imagens/antonio.jpeg", linkedin:"" },
 ];
 
 const CONTATO = {
@@ -125,7 +125,7 @@ const CONTATO = {
   cidade:"Pelotas, Rio Grande do Sul",
   cnpj:"53.927.908/0001-01",
   linkedin:"",
-  instagram:"",                       // colar aqui o link do perfil
+  instagram:"https://www.instagram.com/vertgenese/",
 };
 
 /* ═══════════ FIM DO CONTEÚDO EDITÁVEL ═══════════ */
