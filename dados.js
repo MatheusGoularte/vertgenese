@@ -97,35 +97,35 @@ const MIDIA = [
 ];
 
 const EQUIPE = [
-  // foto: opcional — ex.: "imagens/equipe/matheus.jpg". Vazio = card só com texto.
-  { nome:"Matheus Goularte", cargo:"Presidência",
+  // foto: opcional — caminho do arquivo, com a extensão exata. Vazio = card com as iniciais.
+  { nome:"Matheus Goularte", cargo:"Presidência · Pesquisa, Desenvolvimento e Inovação",
     resumo:"Mestre em Ciência e Engenharia de Materiais pela UFPel e doutorando na mesma área. Atua em materiais lignocelulósicos, pirólise e processos de biorrefinaria.",
-    foto:"imagens/equipe/matheus.jpg", linkedin:"" },
+    foto:"imagens/matheus.jpeg", linkedin:"" },
 
   { nome:"Ávila Ferreira", cargo:"Vice-presidência",
     resumo:"Responsável por comunicação estratégica e presença institucional da empresa.",
-    foto:"imagens/equipe/avila.jpg", linkedin:"" },
+    foto:"imagens/avila.jpeg", linkedin:"" },
 
   { nome:"Wesley Pires", cargo:"Líder de Produção",
     resumo:"Conduz a produção dos materiais em bancada e o escalonamento dos processos.",
-    foto:"imagens/equipe/wesley.jpg", linkedin:"" },
+    foto:"imagens/wesley.jpeg", linkedin:"" },
 
   { nome:"Júlia Prates", cargo:"Líder de Sustentabilidade e Meio Ambiente",
     resumo:"Responsável pelas frentes ambientais e pela avaliação de impacto das rotas desenvolvidas.",
-    foto:"imagens/equipe/julia.jpg", linkedin:"" },
+    foto:"imagens/julia.jpeg", linkedin:"" },
 
   { nome:"Antônio Motta", cargo:"Líder de Operação",
     resumo:"Responsável pela operação e pela rotina técnica dos projetos em andamento.",
-    foto:"imagens/equipe/antonio.jpg", linkedin:"" },
+    foto:"", linkedin:"" },
 ];
 
 const CONTATO = {
-  email:"contato@vertgenese.com.br",
-  whatsapp:"5553000000000",          // só números, com 55 na frente
+  email:"EDITAR@vertgenese.com.br",   // trocar pelo e-mail real
+  whatsapp:"",                        // vazio = o link de WhatsApp não aparece
   cidade:"Pelotas, Rio Grande do Sul",
-  cnpj:"00.000.000/0001-00",
+  cnpj:"53.927.908/0001-01",
   linkedin:"",
-  instagram:"",
+  instagram:"",                       // colar aqui o link do perfil
 };
 
 /* ═══════════ FIM DO CONTEÚDO EDITÁVEL ═══════════ */
